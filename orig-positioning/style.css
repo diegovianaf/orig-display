@@ -95,6 +95,11 @@ p {
   background: #900;
 }
 
+.content .content-cover img {
+  object-fit: cover;
+  height: 100%;
+}
+
 .subtitle {
   font-size: 4rem;
   text-transform: uppercase;
@@ -103,14 +108,15 @@ p {
   padding: 2.5rem;
   align-self: center;
   background-image: url(img/onda.svg);
+  /* word-break: break-all; */
 }
 
-.benefits {
+.advantages {
   background: #fff;
   padding: 2.5rem;
 }
 
-.benefits .benefits-item {
+.advantages .advantages-item {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: .75rem 1.5rem;
@@ -118,15 +124,15 @@ p {
   border-left: 4px solid transparent;
 }
 
-.benefits .benefits-item:nth-child(odd) {
+.advantages .advantages-item:nth-child(odd) {
   background: #f7f7f7;
 }
 
-.benefits .benefits-item:hover {
+.advantages .advantages-item:hover {
   border-color: #e21;
 }
 
-.benefits .benefits-item p {
+.advantages .advantages-item p {
   grid-column: 2;
 }
 
@@ -135,4 +141,45 @@ p {
   width: 100%;
   text-align: center;
   padding: 2.5rem;
+}
+
+@media (max-width: 1000px) {
+  .content-advantages {
+    grid-template-columns: 1fr;
+  }
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    gap: 1.75rem;
+    margin-top: 1.25rem;
+  }
+  .header {
+    gap: 1.75rem;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .introduction{
+    text-align: left;
+    justify-items: start;
+  }
+  .introduction::before {
+    display: none;
+  }
+  .subtitle {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 400px) {
+    .subtitle {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
 }
